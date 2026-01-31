@@ -57,7 +57,8 @@ setup(
         'pyparsing>=2,<4;python_version>="3.0"',
     ],
     extras_require={
-        'Duration': ['python-dateutil>=2.8.0']
+        'Duration': ['python-dateutil>=2.8.0'],
+        'test': ['pytest', 'mock==3.0.5']
     },
     tests_require=['pytest', 'mock==3.0.5'],
     entry_points={

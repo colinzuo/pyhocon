@@ -54,7 +54,7 @@ setup(
     ],
     install_requires=[
         'pyparsing~=2.0;python_version<"3.0"',
-        'pyparsing>=2,<4;python_version>="3.0"',
+        'pyparsing>=3,<4;python_version>="3.0"',
     ],
     extras_require={
         'Duration': ['python-dateutil>=2.8.0'],

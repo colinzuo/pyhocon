@@ -7,7 +7,6 @@ import re
 import socket
 import sys
 
-import pyparsing
 from pyparsing import (Forward, Group, Keyword, Literal, Optional,
                        ParserElement, ParseSyntaxException, QuotedString,
                        Regex, SkipTo, StringEnd, Suppress, TokenConverter,
@@ -15,19 +14,6 @@ from pyparsing import (Forward, Group, Keyword, Literal, Optional,
                        replaceWith)
 
 from pyhocon.period_parser import get_period_expr
-
-# Fix deepcopy issue with pyparsing
-if sys.version_info >= (3, 8):
-    def fixed_get_attr(self, item):
-        if item == '__deepcopy__':
-            raise AttributeError(item)
-        try:
-            return self[item]
-        except KeyError:
-            return ""
-
-
-    pyparsing.ParseResults.__getattr__ = fixed_get_attr
 
 from pyhocon.config_tree import (ConfigInclude, ConfigList, ConfigQuotedString,
                                  ConfigSubstitution, ConfigTree,
